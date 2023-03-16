@@ -12,11 +12,7 @@ int main(){
     for(int i = 0; i < str.size(); i++){
         if(str[i] == '+' || str[i] == '-'){
             tmp += stoi(str.substr(t, i - t));
-            if(t == 0) {
-                ans += tmp;
-                tmp = 0;
-            }
-            else if(!m){
+            if(t == 0 || !m) {
                 ans += tmp;
                 tmp = 0;
             }
