@@ -3,8 +3,7 @@
 using namespace std;
 
 int main(){
-    set<int> a;
-    set<int> b;
+    set<int> a, b;
     int n, m, x, ans = 0;
     cin >> n >> m;
     for(int i = 0; i < n + m; i++) {
