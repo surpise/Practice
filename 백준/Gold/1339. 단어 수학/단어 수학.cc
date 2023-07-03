@@ -27,7 +27,6 @@ int main(){
             tmp *= 10;
         }
     }
-
     sort(vec.begin(), vec.end(), cmp);
 
     int alpha[26] = {0, }, num = 9;
