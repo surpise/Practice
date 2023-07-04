@@ -27,16 +27,12 @@ int main(){
         }
         else ans += v1[i];
     }
-    for(int i = 0; i < v2.size(); i ++){
+    for(int i = 0; i < v2.size(); i += 2){
         if(i == v2.size() - 1) {
             if(zero > 0) zero--;
             else ans += v2[i]; 
         }
-        else if(v2[i] * v2[i + 1] > v2[i] + v2[i + 1]){
-            ans += v2[i] * v2[i + 1];
-            i++;
-        }
-        else ans += v2[i];
+        else ans += v2[i] * v2[i + 1];
     }
     cout << ans;
 }
