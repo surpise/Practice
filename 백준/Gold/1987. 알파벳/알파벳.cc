@@ -26,5 +26,8 @@ int main(){
         for(int j = 0; j < c; j++) cin >> arr[i][j];
     }
     dfs(0, 0, 0);
+    if(ans == 0){
+        ans = 1;
+    }
     cout << ans;
 }
