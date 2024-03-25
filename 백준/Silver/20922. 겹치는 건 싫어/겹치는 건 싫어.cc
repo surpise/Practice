@@ -1,6 +1,4 @@
 #include <iostream>
-#include <algorithm>
-#include <queue>
 
 using namespace std;
 
@@ -16,27 +14,24 @@ void init(){
 }
 
 int solution(){
-  queue<int> q;
-
   int res = 0;
   int l = 0, r = 0;
 
   while(l <= r){
     if(r >= n || l >= n) break;
 
-    if(cnt[arr[r]] < k){
-          cnt[arr[r]]++;
-      q.push(arr[r]);
+    if(cnt[arr[r]] < k)
+    {
+      cnt[arr[r]]++;
       r++;
-    }
-    
+    } 
+
     else{
-      cnt[q.front()]--;
-      q.pop();
+      cnt[arr[l]]--;
       l++;
     }
 
-    if(q.size() > res) res = q.size();
+    res = max(res, r - l);
   }
 
   return res;
