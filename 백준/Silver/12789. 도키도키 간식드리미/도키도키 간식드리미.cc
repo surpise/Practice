@@ -4,41 +4,35 @@
 using namespace std;
 
 int main(){
-  int sz, cur = 1, v;
-  stack<int> s;
-  cin >> sz;
-  for(int i = 0; i < sz; i++){
+  int n;
+  cin >> n;
+
+  int t = 1;
+  stack<int> st;
+
+  int v;
+  for(int idx = 0; idx < n; idx++){
     cin >> v;
-    if(v != cur){
-      while(!s.empty()){
-        if(s.top() == cur){
-          s.pop();
-          cur++;
+    if(v != t){
+      while(!st.empty()){
+        if(st.top() == t){
+          t++;
+          st.pop();
         }
-        else{
-          break;
-        }
+        else break;
       }
-      s.push(v);
+      st.push(v);
     }
-    else{
-      cur++;
-    }
+    else t++;
   }
-  while(!s.empty()){
-    if(s.top() == cur){
-      s.pop();
-      cur++;
+  while(!st.empty()){
+    if(st.top() == t){
+      t++;
+      st.pop();
     }
-    else{
-      break;
-    }
+    else break;
   }
 
-  if(s.empty()){
-    cout << "Nice";
-  }
-  else{
-    cout << "Sad";
-  }
+  if(!st.empty()) cout << "Sad";
+  else cout << "Nice";
 }
