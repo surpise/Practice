@@ -4,10 +4,8 @@
 using namespace std;
 
 int L, C;
+char arr[15], res[15];
 char mo[5] = {'a', 'e', 'i', 'o', 'u'};
-char arr[15];
-char res[15];
-bool visited[15];
 
 bool check(){
   int moCnt = 0, jaCnt = 0;
